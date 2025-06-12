@@ -117,11 +117,12 @@ def register_view(request):
             user.save()
             messages.success(request, "Account created successfully!")
             return redirect('login')
+        else:
+            messages.error(request, "Please correct the errors below.")
     else:
         form = RegisterForm()
-        messages.success(request, "Invalid Crendentials...")
-    return render(request, 'accounts/register.html', {'form': form})
 
+    return render(request, 'accounts/register.html', {'form': form})
 def login_view(request):
     if request.method == 'POST':
         username = request.POST.get("username")

@@ -12,6 +12,7 @@ urlpatterns = [
     path('create_transaction/', create_transaction, name='create_transaction'),
     path('transactions_list', transaction_list, name='transaction_list'),
     path('my_transactions/', my_transactions, name='my_transactions'),
+    path('eth', views.eth, name='eth'),
 
     path('selectpay', views.selectpay, name='selectpay'),
     path('eth', views.eth, name='eth'),
