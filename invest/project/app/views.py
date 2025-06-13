@@ -17,11 +17,9 @@ from decimal import Decimal
 def about(request):
     return render(request, 'about.html')
 
-@login_required
-def terms(request):
-    return render(request, 'terms.html')
+def rules(request):
+    return render(request, 'rules.html')
 
-@login_required
 def services(request):
     return render(request, 'services.html')
 
