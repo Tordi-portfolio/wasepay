@@ -79,11 +79,11 @@
 
   <label>Send To Wallet Address:</label>
   <div class="wallet-address" id="wallet-address">
-    TX7xyzabc1234567890walletsampleTRC20
+    4PvWjAFtCTnKB8uzNCyikX858CQi44j2zuidg1MKQDbk
   </div>
 
-  <a id="whatsapp-link" class="btn" href="#" target="_blank">
-    Confirm via WhatsApp
+  <a id="whatsapp-link" class="btn" href="" target="_blank">
+    Confirm via Telegram
   </a>
 </div>
 
@@ -144,13 +144,13 @@
 
 
 <script>
-  const whatsappLink = document.getElementById("whatsapp-link");
+  const confirmLink = document.getElementById("whatsapp-link"); // You can rename this ID later
   const amountInput = document.getElementById("amount");
 
   const walletAddress = document.getElementById("wallet-address").innerText;
-  const whatsappNumber = "2348012345678"; // Replace with your full WhatsApp number
+  const telegramUsername = "tordi27"; // Username without @
 
-  whatsappLink.addEventListener("click", function(e) {
+  confirmLink.addEventListener("click", function(e) {
     const amount = amountInput.value.trim();
     if (!amount) {
       alert("Please enter the amount before confirming.");
@@ -158,10 +158,11 @@
       return;
     }
 
-    const message = encodeURIComponent(`Hello, I have sent a payment of ${amount} USDT (TRC20) to the wallet address: ${walletAddress}`);
-    const url = `https://wa.me/${whatsappNumber}?text=${message}`;
-    whatsappLink.href = url;
+    const message = encodeURIComponent(`Hello, I have sent a payment of ${amount} sol (SOL) to the wallet address: ${walletAddress}`);
+    const url = `https://t.me/${telegramUsername}?text=${message}`;
+    confirmLink.href = url;
   });
 </script>
+
 
 {% endblock %}

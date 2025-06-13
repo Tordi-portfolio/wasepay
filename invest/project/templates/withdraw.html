@@ -85,6 +85,50 @@
     background-color: #dcfce7;
     color: #15803d;
   }
+
+  .minimum-note {
+    margin-top: 25px;
+    background-color: #f0f4ff;
+    border-left: 4px solid #007bff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .minimum-note ul {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+
+  .minimum-note li {
+    margin-bottom: 6px;
+  }
+
+  .notice {
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-left: 5px solid #ff4d4d;
+    border-radius: 8px;
+  }
+
+  .notice h2 {
+    color: #ff4d4d;
+    margin-top: 0;
+  }
+
+  .note {
+    margin-top: 20px;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: #856404;
+  }
 </style>
 
 <div class="withdraw-container">
@@ -127,43 +171,28 @@
 
     <button type="submit" class="btn-submit">Submit Withdrawal</button>
   </form>
+
+  <!-- ✅ Minimums Note -->
+  <div class="minimum-note">
+    <strong>⚠️ Minimum Withdrawal Requirements:</strong>
+    <ul>
+      <li>💵 <strong>USDT:</strong> $500</li>
+      <li>🪙 <strong>Ethereum (ETH):</strong> 0.1 ETH</li>
+      <li>🪙 <strong>Solana (SOL):</strong> 10 SOL</li>
+      <li>🪙 <strong>Toncoin (TON):</strong> 100 TON</li>
+    </ul>
+  </div>
+  <div class="minimum-note">
+    <strong>⚠️ Chains To Withdraw Or Deposit to:</strong>
+    <ul>
+      <li>💵 <strong>USDT:</strong> Bep20</li>
+      <li>🪙 <strong>Ethereum (ETH):</strong> ERC20</li>
+      <li>🪙 <strong>Solana (SOL):</strong>SOL</li>
+      <li>🪙 <strong>Toncoin (TON):</strong>TON</li>
+    </ul>
+  </div>
 </div>
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #fafafa;
-    color: #333;
-  }
-
-  .notice {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-left: 5px solid #ff4d4d;
-  }
-
-  h2 {
-    color: #ff4d4d;
-  }
-
-  ul {
-    margin-top: 10px;
-    padding-left: 20px;
-  }
-
-  .note {
-    margin-top: 20px;
-    background-color: #fff3cd;
-    border-left: 4px solid #ffc107;
-    padding: 10px;
-    font-size: 14px;
-  }
-</style>
-</head>
-<body>
 <div class="notice">
   <h2>⚠️ Important Notice</h2>
   <p>Please make sure to <strong>copy and paste your wallet address correctly</strong> when making a withdrawal.</p>

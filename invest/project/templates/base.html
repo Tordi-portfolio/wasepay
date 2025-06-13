@@ -32,12 +32,14 @@
           <li><a href="{% url 'create_transaction' %}">➕ Create Transaction</a></li>
           <li><a href="{% url 'transaction_list' %}">➕ Transaction List</a></li>
           <li><a href="{% url 'selectpay' %}">➕ Depositt</a></li>
-          {% endif %}
           <li><a href="{% url 'my_transactions' %}">📄 View My Transactions</a></li>
+          {% endif %}
           <li><a href="#">Hi, {{ user.username }}</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'withdraw' %}">Withdraw</a></li>
           <li><a href="{% url 'logout' %}">Logout</a></li>
         {% else %}
+          <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'login' %}">Login</a></li>
           <li><a href="{% url 'register' %}">Register</a></li>
         {% endif %}
@@ -53,7 +55,7 @@
   <!-- Footer -->
   <footer class="responsive-footer">
     <p>&copy; {% now "Y" %} Wasepay. All rights reserved.</p>
-    <p>Designed by Tordi</p>
+    <p>Designed by Wasepay Dev Team</p>
   </footer>
 
   <!-- JavaScript -->

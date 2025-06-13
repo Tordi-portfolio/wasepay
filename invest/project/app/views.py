@@ -13,6 +13,19 @@ from django.shortcuts import render
 from django.db.models import F
 from decimal import Decimal
 
+
+def about(request):
+    return render(request, 'about.html')
+
+@login_required
+def terms(request):
+    return render(request, 'terms.html')
+
+@login_required
+def services(request):
+    return render(request, 'services.html')
+
+
 @login_required
 def selectpay(request):
     return render(request, 'payment/selectpay.html', {})
@@ -293,3 +306,4 @@ def my_transactions(request):
     user = request.user
     transactions = user.transactions.all().order_by('-created_at')  # using related_name
     return render(request, 'my_transactions.html', {'transactions': transactions})
+

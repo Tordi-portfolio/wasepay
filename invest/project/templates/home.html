@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Tordi Crypto{% endblock %}
+{% block title %}WasePay{% endblock %}
 
 {% block content %}
 <section class="home-hero">
@@ -22,7 +22,11 @@
   <div class="container">
       <h1 class="display-4 fw-bold">Welcome to WasePay</h1>
       <p class="lead">Invest Smarter. Earn Faster. 50% Return on Every Crypto Investment</p>
+      {% if user.is_authenticated %}
+      <a href="{% url 'dashboard' %}" class="btn btn-light btn-lg mt-3">Get Started</a>
+    {% else %}
       <a href="{% url 'register' %}" class="btn btn-light btn-lg mt-3">Get Started</a>
+    {% endif %}
   </div>
 </section>
 

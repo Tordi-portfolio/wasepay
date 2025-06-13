@@ -72,14 +72,14 @@
 
 <div class="payment-box">
   <img src="https://cryptologos.cc/logos/tether-usdt-logo.png?v=026" alt="USDT Logo">
-  <h2>Deposit TON</h2>
+  <h2>Deposit TON (ton)</h2>
 
   <label for="amount">Enter Amount (TON)</label>
   <input type="number" id="amount" placeholder="e.g. 100" required>
 
   <label>Send To Wallet Address:</label>
   <div class="wallet-address" id="wallet-address">
-    TX7xyzabc1234567890walletsampleTRC20
+    UQDtWKBrwC53kcX3H4aOAiiQESXLqm0H0DMUWHCDgZp0fBaq
   </div>
 
   <a id="whatsapp-link" class="btn" href="#" target="_blank">
@@ -142,15 +142,14 @@
   }
 </style>
 
-
 <script>
-  const whatsappLink = document.getElementById("whatsapp-link");
+  const confirmLink = document.getElementById("whatsapp-link"); // You can rename this ID later
   const amountInput = document.getElementById("amount");
 
   const walletAddress = document.getElementById("wallet-address").innerText;
-  const whatsappNumber = "2348012345678"; // Replace with your full WhatsApp number
+  const telegramUsername = "tordi27"; // Username without @
 
-  whatsappLink.addEventListener("click", function(e) {
+  confirmLink.addEventListener("click", function(e) {
     const amount = amountInput.value.trim();
     if (!amount) {
       alert("Please enter the amount before confirming.");
@@ -158,9 +157,9 @@
       return;
     }
 
-    const message = encodeURIComponent(`Hello, I have sent a payment of ${amount} USDT (TRC20) to the wallet address: ${walletAddress}`);
-    const url = `https://wa.me/${whatsappNumber}?text=${message}`;
-    whatsappLink.href = url;
+    const message = encodeURIComponent(`Hello, I have sent a payment of ${amount} ton (TON) to the wallet address: ${walletAddress}`);
+    const url = `https://t.me/${telegramUsername}?text=${message}`;
+    confirmLink.href = url;
   });
 </script>
 
