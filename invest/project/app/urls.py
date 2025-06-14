@@ -31,4 +31,5 @@ urlpatterns = [
     path('services', views.services, name='services'),
 
     path('about', views.about, name='about'),
+    path('price', views.price, name='price'),
 ]

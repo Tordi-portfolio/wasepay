@@ -141,7 +141,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user:
             login(request, user)
-            messages.error(request, "Successfully Login...")
+            messages.success(request, "Successfully Login...")
             return redirect('home')
         else:
             messages.error(request, "Invalid credentials")
@@ -149,6 +149,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
+    messages.success(request, "Successfully Logout...")
     return redirect('home')
 
 
@@ -193,7 +194,6 @@ def ForgotPassword(request):
 
             email_message.fail_silently = True
             email_message.send()
-
             return redirect('password-reset-sent', reset_id=new_password_reset.reset_id)
 
         except User.DoesNotExist:
@@ -205,7 +205,7 @@ def ForgotPassword(request):
 def PasswordResetSent(request, reset_id):
 
     if PasswordReset.objects.filter(reset_id=reset_id).exists():
-        return render(request, 'password_reset_sent.html')
+        return render(request, 'accounts/password_reset_sent.html')
     else:
         # redirect to forgot password page if code does not exist
         messages.error(request, 'Invalid reset id')
@@ -305,3 +305,21 @@ def my_transactions(request):
     transactions = user.transactions.all().order_by('-created_at')  # using related_name
     return render(request, 'my_transactions.html', {'transactions': transactions})
 
+
+import requests
+from bs4 import BeautifulSoup
+from .scraper import scrape_crypto_table
+
+# Create your views here.
+
+def price(request):
+    data = scrape_crypto_table()
+    query = request.GET.get('q', '').lower()
+
+    if query:
+        data = [
+            coin for coin in data
+            if query in coin['name'].lower() or query in coin['code'].lower()
+        ]
+
+    return render(request, 'price.html', {'data': data, 'query': query})
